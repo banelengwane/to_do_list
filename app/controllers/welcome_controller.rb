@@ -1,5 +1,5 @@
 class WelcomeController < ApplicationController
   def index
-    @tasks = ["be coo", "dont to drugs"]
+    @tasks = ["be cool", "dont to drugs"]
   end
 end
