@@ -3,7 +3,10 @@
 
 <ul>
     <% @tasks.each do |task| %>
-        <li><%= task %></li>
+        <li>
+           <p><h3> <%= task.title %></h3></p>
+           <p><em> <%= task.details %></em></p>
+        </li>
     <% end %>
 </ul>
 
