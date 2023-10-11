@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
   def index
     #how to return all tasks in the database
-    @tasks = Task.all
+    @tasks = current_user.tasks.all
   end
 
   #this is where create a new task
