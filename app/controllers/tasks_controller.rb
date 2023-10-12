@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+  before_action :confirm_login
   def index
     #how to return all tasks in the database
     @tasks = current_user.tasks.all
@@ -53,4 +54,11 @@ class TasksController < ApplicationController
   def task_params
     params.require(:task).permit(:title, :details, :completed)
   end
+
+  def confirm_login
+    unless current_user
+      redirect_to root_path, alert: "You must log in to manage a to do list."
+    end
+  end
+
 end
